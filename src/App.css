@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('https://previews.123rf.com/images/prawny/prawny1206/prawny120600042/14254204-cute-cartoon-design-made-up-of-colourful-bubble-cars-forming-a-congested-traffic-jam-wallpaper.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+/* Estilo del contenedor principal */
+.container {
+  padding: 200px;/* Espacio interno */
+
+}
+
+
+/* Estilo para las páginas */
+.page {
+  margin-top: 50px;
+  padding: 100px;/* Espacio interno */
+  max-width: 900px;/* Ancho máximo */
+  margin: 10 auto;/* Centrado automático */
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 10 4px 8px rgba(0, 0, 0, 0.1);/* Sombra */
+}
+
+/* Botón genérico */
+.button {
+  
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #2980b9;
+}
