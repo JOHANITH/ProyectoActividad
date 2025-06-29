@@ -46,3 +46,23 @@
   font-size: 0.95rem;
     color: #555;
 }
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* Para que se acomoden si hay poco espacio */
+  margin-top: 30px;
+}
+
+.image {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}

@@ -41,3 +41,19 @@
   line-height: 1;
   text-align: justify;
 }
+
+.page {
+  padding: 60px 80px;
+  text-align: center;
+}
+
+
+
+.image-modelo {
+
+  width: 900%;
+  max-width: 900px;
+  height: auto;
+  border-radius: 12px;
+  margin-top: 20px;
+}

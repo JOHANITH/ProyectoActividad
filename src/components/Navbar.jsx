@@ -11,7 +11,7 @@ export default function Navbar() {
       <ul className="navbar-links">
         <li><Link to="/login">INICIO  </Link></li>
         <li><Link to="/info">INFORMACION  </Link></li>
-        <li><Link to="/profile">PERFIL</Link></li>
+     
         <li><Link to="/prueba">OPERACIONES DE PRUEBA</Link></li>
         <li><Link to="/modelo">MODELO ER</Link></li>
           <li><Link to="/integrantes">INTEGRANTES</Link></li>

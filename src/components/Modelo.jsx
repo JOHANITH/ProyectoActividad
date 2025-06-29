@@ -6,12 +6,11 @@ export default function Modelo() {
   return (
     <div className="page">
       <h1>Modelo Entidad-Relación</h1>
-      <p>
-        El modelo entidad-relación (ER) es una técnica de modelado de datos que
-        se utiliza para representar la estructura lógica de una base de datos.
-        Consiste en identificar las entidades, sus atributos y las relaciones
-        entre ellas.
-      </p>
+      <img 
+       src="https://res.cloudinary.com/dso63qdie/image/upload/v1751123929/WhatsApp_Image_2025-06-28_at_10.13.42_AM_qp8btd.jpg"
+       alt="Modelo Entidad-Relación"
+       className="image-modelo"
+        />
       <Outlet />
     </div>
   );
