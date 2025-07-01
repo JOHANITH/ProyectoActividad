@@ -1,17 +1,21 @@
 import { Link, Outlet } from "react-router-dom";
 import React from "react";
 import "./EstiloGeneral.css";
+import "./Modelo.css"
 
 export default function Modelo() {
   return (
-    <div className="page">
+    <div className="page page--wide">
       <h1>Modelo Entidad-Relación</h1>
-      <img 
-       src="https://res.cloudinary.com/dso63qdie/image/upload/v1751123929/WhatsApp_Image_2025-06-28_at_10.13.42_AM_qp8btd.jpg"
-       alt="Modelo Entidad-Relación"
-       className="image-modelo"
-        />
-      <Outlet />
+      <iframe
+        src="https://dbdocs.io/marezrioje/Parqueadero_ParkingApp?view=relationships"
+        width="100%"
+        height="640"
+        style={{ border: 'none', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
+        title="Diagrama ER - ParkingApp"
+        allowFullScreen
+      />      
+      <Outlet />  
     </div>
   );
 }
