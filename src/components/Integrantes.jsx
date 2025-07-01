@@ -13,13 +13,13 @@ export default function Integrantes() {
           <p>Dennys Johanna Rubio illamizar</p>
         </li>
         <li>
-          <p>Luis Mario Jerez Pabon</p>
+          <p>Luis Mario Jerez Pabón</p>
         </li>
         <li>
-          <p>Wilker Julián botello medina</p>
+          <p>Wilker Julian botello medina</p>
         </li>
         <li>
-          <p>Juian Granados Mendez </p>
+          <p>Julian Granados Mendez </p>
         </li>
       </ul>  
     </div>

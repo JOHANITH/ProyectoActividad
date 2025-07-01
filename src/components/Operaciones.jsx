@@ -4,15 +4,16 @@ import "./operaciones.css";
 
 export default function Operaciones() {
   const [currentPage, setCurrentPage] = useState(0);
+  const [imagenAmpliada, setImagenAmpliada] = useState(null);
   const itemsPerPage = 3;
 
-  // Imagen fija (Modelo ER)
+  // Imagen fija
   const imagenFija = {
     titulo: "🔹Modelo Entidad Relación",
     url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751230512/00_esquema_ytfsfl.png"
   };
 
-  // Imágenes paginadas (excluye la primera)
+  // Imágenes dinámicas
   const imagenes = [
     { titulo: "🔹Insert Parqueadero", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751230511/01_insertar_perqueadero_nh1n9x.png" },
     { titulo: "🔹Insert Tipo de plaza", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751230512/02_insertar_tipos_de_plazas_a4nj9k.png" },
@@ -31,22 +32,12 @@ export default function Operaciones() {
     { titulo: "🔹Select: Mostrar ocupación", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241340/01_Ruta_icupacion_de_plazas_-_sql_rkndrp.png" },
     { titulo: "🔹Ruta Registro parqueo", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241341/02_Ruta_resgistro_de_parqueo_i8ujaz.png" },
     { titulo: "🔹Insert: Registrar Vehiculo", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241339/02_Ruta_resgistro_de_parqueo_-_sql_vgs8gy.png" },
-    { titulo: "🔹Select: Buscar plaza libre", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241340/02_Ruta_resgistro_de_parqueo_busqueda_-_sql_bpfswb.png" },    
-    { titulo: "🔹Insert: Registrar Parqueo", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241340/02_Ruta_resgistro_de_parqueo_registro_-_sql_halomq.png" }    
+    { titulo: "🔹Select: Buscar plaza libre", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241340/02_Ruta_resgistro_de_parqueo_busqueda_-_sql_bpfswb.png" },
+    { titulo: "🔹Insert: Registrar Parqueo", url: "https://res.cloudinary.com/dptqdghgv/image/upload/v1751241340/02_Ruta_resgistro_de_parqueo_registro_-_sql_halomq.png" }
   ];
 
   const totalPages = Math.ceil(imagenes.length / itemsPerPage);
-  const start = currentPage * itemsPerPage;
-  const end = start + itemsPerPage;
-  const currentImages = imagenes.slice(start, end);
-
-  const avanzar = () => {
-    if (currentPage < totalPages - 1) setCurrentPage(currentPage + 1);
-  };
-
-  const retroceder = () => {
-    if (currentPage > 0) setCurrentPage(currentPage - 1);
-  };
+  const currentImages = imagenes.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
 
   return (
     <div className="login-container">
@@ -56,7 +47,13 @@ export default function Operaciones() {
       <div className="image-row">
         <div>
           <p>{imagenFija.titulo}</p>
-          <img src={imagenFija.url} alt="Modelo ER" className="image" />
+          <img
+            src={imagenFija.url}
+            alt="Modelo ER"
+            className="image"
+            onClick={() => setImagenAmpliada(imagenFija)}
+            style={{ cursor: "pointer" }}
+          />
         </div>
       </div>
 
@@ -65,20 +62,37 @@ export default function Operaciones() {
         {currentImages.map((img, index) => (
           <div key={index}>
             <p>{img.titulo}</p>
-            <img src={img.url} alt={img.titulo} className="image" />
+            <img
+              src={img.url}
+              alt={img.titulo}
+              className="image"
+              onClick={() => setImagenAmpliada(img)}
+              style={{ cursor: "pointer" }}
+            />
           </div>
         ))}
       </div>
 
       {/* Botones de navegación */}
       <div className="nav-buttons">
-        <button onClick={retroceder} disabled={currentPage === 0} className="button">
+        <button onClick={() => setCurrentPage(p => p - 1)} disabled={currentPage === 0} className="button">
           ◀ Anterior
         </button>
-        <button onClick={avanzar} disabled={currentPage === totalPages - 1} className="button">
+        <button onClick={() => setCurrentPage(p => p + 1)} disabled={currentPage === totalPages - 1} className="button">
           Siguiente ▶
         </button>
       </div>
+
+      {/* Modal de imagen ampliada */}
+      {imagenAmpliada && (
+        <div className="modal-overlay" onClick={() => setImagenAmpliada(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setImagenAmpliada(null)}>✖</button>
+            <img src={imagenAmpliada.url} alt={imagenAmpliada.titulo} />
+            <p>{imagenAmpliada.titulo}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

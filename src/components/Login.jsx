@@ -21,15 +21,15 @@ export default function Login() {
         <div className="card-container">
           <div className="info-card" onClick={() => handleShowInfo(1)}>
             <h2>MISIÓN 1️⃣</h2>
-            <p>Plantaeamiento, creacion de interfas y funcionalidad del proyecto</p>
+            <p>Planteamiento, creación de interfás y funcionalidad del proyecto</p>
           </div>
           <div className="info-card" onClick={() => handleShowInfo(2)}>
             <h2>MISIÓN 2️⃣</h2>
-            <p>Diseño de MER y creacion de base de datos Postgre y consultas SQL</p>
+            <p>Diseño de MER y creación de base de datos Postgre y consultas SQL</p>
           </div>
           <div className="info-card" onClick={() => handleShowInfo(3)}>
             <h2>MISIÓN 3️⃣</h2>
-            <p>Aplicacion funcional desplegada y conectada a la base de datos</p>
+            <p>Aplicación funcional desplegada y conectada a la base de datos</p>
           </div>
         </div>
       )}
